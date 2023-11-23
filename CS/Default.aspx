@@ -10,23 +10,17 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <dx:ASPxGridView ID="gridView" runat="server" AutoGenerateColumns="False" DataSourceID="ads"
-            KeyFieldName="CategoryID" ClientInstanceName="gridView">
+        <dx:ASPxGridView ID="gridView" runat="server" AutoGenerateColumns="False" DataSourceID="ads" KeyFieldName="CategoryID" ClientInstanceName="gridView">
             <SettingsSearchPanel Visible="true" />
             <Columns>
-                <dx:GridViewDataTextColumn FieldName="CategoryID" ReadOnly="True" VisibleIndex="0">
-                    <EditFormSettings Visible="False" />
-                </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="CategoryName" VisibleIndex="1">
+                <dx:GridViewDataTextColumn FieldName="CategoryID" />
+                <dx:GridViewDataTextColumn FieldName="CategoryName" >
                     <DataItemTemplate>
-                        <dx:ASPxImage ID="ASPxImage1" runat="server" ShowLoadingImage="true" Width="50"
-                            ImageUrl='<%# string.Format("~/Images/{0}.jpg", Eval("CategoryID")) %>'>
-                        </dx:ASPxImage>
-                        <dx:ASPxLabel ID="label" runat="server" Text='<%# Eval("CategoryName") %>' EncodeHtml="false" OnDataBound="label_DataBound"></dx:ASPxLabel>
+                        <dx:ASPxImage ID="ASPxImage1" runat="server" ShowLoadingImage="true" Width="50" ImageUrl='<%# string.Format("~/Images/{0}.jpg", Eval("CategoryID")) %>' />
+                        <dx:ASPxLabel ID="label" runat="server" Text='<%# Eval("CategoryName") %>' EncodeHtml="false" OnDataBound="label_DataBound" />
                     </DataItemTemplate>
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Description" VisibleIndex="2">
-                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Description" />
             </Columns>
         </dx:ASPxGridView>
         <asp:AccessDataSource ID="ads" runat="server" DataFile="~/App_Data/nwind.mdb" SelectCommand="SELECT * FROM [Categories]"></asp:AccessDataSource>
