@@ -6,7 +6,7 @@
 
 # Grid View for ASP.NET Web Forms - How to highlight search text placed inside a DataItem template
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/t222691/)**
+**[[Run Online]](https://codecentral.devexpress.com/128536430/)**
 <!-- run online end -->
 
 Search results contained in templates are not highlighted. This example demonstrates how to highlight them manually. 
